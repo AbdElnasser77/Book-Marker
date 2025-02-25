@@ -1,0 +1,167 @@
+:root{
+    --main-color: #171717;
+    --secondery-color:#444444;
+    --red:#DA0037;
+    --text-color:#EDEDED;
+}
+
+*{
+    margin: 0;
+}
+
+body{
+    font-family: "Barlow Condensed", serif;
+    font-weight: 400;
+    letter-spacing: 1.4px;
+    font-style: normal;
+}
+
+main{
+    background-color: #171717;
+    min-height: 100vh;
+    color: #EDEDED;
+}
+
+
+.container{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title{
+    padding-top:15px;
+}
+
+.title h1{
+    margin: 0;
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.h-style{
+    color: var(--red);
+}
+
+.inputs{
+    padding: 50px;
+    font-size: 1.3rem;
+}
+.input-group label,input{
+    margin: 10px 0px;
+    width: 100%;
+}
+.input-group i{
+    padding-right: 10px;
+}
+
+input{
+    padding: 10px;
+    border-radius:5px;
+    transition: outline 0.2s ease-out;
+    border:var(--main-color) 1px solid;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    font-size: 0.8rem;
+}
+
+input:focus{
+    outline: var(--secondery-color) 4px solid;
+    border:var(--main-color) 1px solid;
+    border-radius: 5px;
+
+}
+
+input::placeholder{
+    
+    color: rgb(75, 74, 74);
+    font-size: 0.8rem;
+    
+}
+
+.submit-button{
+    padding: 15px 0px;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 10%;
+    color: var(--text-color-color);
+    background-color: transparent;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.submit-button::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    top: 0;
+    right: 100%;
+    border-bottom: 2px red solid;
+    transition: all 0.2s ease;
+}
+
+.submit-button:hover{
+    color: var(--red);
+}
+
+.submit-button:hover.submit-button::after{
+    content: '';
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px red solid;
+    cursor: pointer;
+}
+
+table{
+    color: var(--text-color);
+    width: 100%;
+    border: 2px solid #EDEDED;
+    text-align:center;
+}
+table tr{
+    font-size: 1.5rem;
+}
+
+table button{
+    padding: 15px 20px;
+    border:none;
+    border-radius: 10px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+table i{
+    padding-right :3px ;
+}
+
+.btn1{
+    background-color: gold;
+    color: black;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn1:hover ,.btn2:hover{
+    background-color: #000000;
+    color: white;
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+}
+
+.btn2{
+    background-color: red;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
