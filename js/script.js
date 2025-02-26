@@ -1,20 +1,24 @@
-var Name = document.getElementById('name');
-var Url = document.getElementById('URL');
+var nameInput = document.getElementById('name');
+var urlInput = document.getElementById('URL');
+var closeButton = document.querySelector('.validation-div .close');
+var validationModal = document.querySelector('.validation-div');
 
 var Websites = [];
 
-if(localStorage.getItem("URLS") != null){
+if(localStorage.getItem("URLS") != null)
+{
     Websites = JSON.parse(localStorage.getItem("URLS"));
     DisplayWebsites(Websites);
 }
 
 
-function DisplayWebsites(Arr){
+function DisplayWebsites(Arr)
+{
 
     var container = ``;
     for(var i = 0 ;i < Arr.length; i++){
         container += `
-                <tr>
+                    <tr>
                         <td>${i+1}</td>
                         <td>${Arr[i].Name}</td>
                         <td><button class="btn1" onclick="VisitSite('${Arr[i].Url}')"><i class="fa-regular fa-eye "></i> Visit</button></td>
@@ -26,21 +30,29 @@ function DisplayWebsites(Arr){
 }
 
 
-function AddSite(){
-    var site = {
-        Name : Name.value,
-        Url : Url.value
+function AddSite()
+{
+    if(Validation(nameInput.value,urlInput.value))
+    {
+        var site = {
+            Name : nameInput.value,
+            Url : urlInput.value
+        }
+        
+        Websites.push(site);
+        localStorage.setItem("URLS" , JSON.stringify(Websites));
+        DisplayWebsites(Websites);
+        ClearForm();
+            
+    }else{
+        validationModal.style.display = "block";   
     }
-
-    Websites.push(site);
-    localStorage.setItem("URLS" , JSON.stringify(Websites));
-    DisplayWebsites(Websites);
-    ClearForm();
 }
 
-function ClearForm(){
-    Name.value = "";
-    Url.value = "";
+function ClearForm()
+{
+        nameInput.value = "";
+        urlInput.value = "";
 }
 
 function DeleteSite(index){
@@ -49,9 +61,40 @@ function DeleteSite(index){
     DisplayWebsites(Websites);
 }
 
-
-
-
 function VisitSite(URL){
     window.open(URL , "_blank");
 }
+
+function Validation(name , url){
+    var nameRegex = /^[a-zA-Z0-9]{3}/;
+    var urlRegex = /^(https\:\/\/){0,1}(www.){0,1}[a-zA-Z0-9]+((\.com)|(\.co)){1}$/;
+    if(nameRegex.test(name)&&urlRegex.test(url)) return true;
+    else return false;
+
+}
+
+    var nameRegex = /^[a-zA-Z0-9]{3}/;
+    var urlRegex = /^(https\:\/\/){0,1}(www.){0,1}[a-zA-Z0-9]+((\.com)|(\.co)){1}$/;
+
+    nameInput.addEventListener('input', function(){
+        if(nameRegex.test(nameInput.value)){
+            nameInput.classList.replace("invalid", "valid");
+            console.log("valid");
+        }
+        else {
+            nameInput.classList.add("invalid");
+        }
+    })
+   urlInput.addEventListener('input', function(){
+        if(urlRegex.test(urlInput.value)){
+            urlInput.classList.replace("invalid", "valid");
+            console.log("valid");
+        }
+        else {
+            urlInput.classList.add("invalid");
+        }
+    })
+
+closeButton.addEventListener('click', function(){
+     validationModal.style.display = "none";
+});

@@ -27,6 +27,7 @@ main{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 
 .title{
@@ -71,8 +72,8 @@ input{
 }
 
 input:focus{
-    outline: var(--secondery-color) 4px solid;
-    border:var(--main-color) 1px solid;
+    outline: var(--secondery-color) 3px solid;
+    border:var(--main-color) 2px solid;
     border-radius: 5px;
 
 }
@@ -164,4 +165,68 @@ table i{
     background-color: red;
     transition: all 0.3s ease;
     border: 1px solid transparent;
+}
+
+.validation-div{
+    background: var(--main-color);
+    padding: 50px;
+    position: absolute;
+    top: 50%;   
+    left: 50%;  
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    border: 2px solid var(--text-color);
+    border-radius: 15px;
+    display: none;
+}
+
+ .validation-div p:first-child {
+    color: red;
+    padding-bottom: 20px;
+    font-size: 1.4rem;
+} 
+
+.validation-div p{
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+}
+
+.validation-div .close{
+    font-size: 1.5rem;
+    position: absolute;
+    top: 15;
+    right: 15;
+    transition: color 0.5s ;
+}
+
+.validation-div .close:hover{
+    color: var(--red);
+    cursor: pointer;
+}
+
+/* .valid{
+    border: green 2px solid;
+    border-radius: 5px;
+}
+
+.valid:focus{
+    border: green 2px solid;
+    outline: rgba(0, 128, 0, 0.5) 1px solid;
+} */
+
+.valid {
+    border-color: #198754;
+}
+
+.valid:focus {
+    outline: 3px solid #198754;
+    border: 1px solid #105233;
+}
+
+.invalid{
+    border-color: rgb(190, 1, 1);
+}
+.invalid:focus{
+    outline: rgba(255, 0, 0, 0.5) 3px solid;
+    border: rgb(190, 1, 1) 1px solid;
 }

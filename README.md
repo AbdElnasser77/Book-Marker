@@ -19,3 +19,5 @@ HTML,CSS,JS
 
 - Implemented and learnt more about Local Storage
 - Better Designing Skills
+- Use of Regex 
+- Use of Eventhandling and implementing close modal

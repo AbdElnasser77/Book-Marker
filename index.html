@@ -15,15 +15,21 @@
             <div class="inputs">
                 <div class="input-group">
                     <label for="name"> <i class="fa-solid fa-bookmark"></i>  Site Name</label>
-                    <input type="text" id="name" placeholder=" Bookmark Name"/>
+                    <input type="text" class="" id="name" placeholder=" Bookmark Name"/>
                 </div>
                 <div class="input-group">
                     <label for="URL"> <i class="fa-solid fa-link "></i> Site URL</label>
-                    <input type="text" id="URL" placeholder=" Website URL"/>
+                    <input type="text" class="" id="URL" placeholder=" Website URL"/>
                 </div>
                 <button type="submit" onclick="AddSite()" class="submit-button"> SUBMIT </button>
             </div>
 
+            <div class="validation-div ">
+                <p>Site Name or Url is not valid, Please follow the rules below :</p>
+                <p>- Site name must contain at least 3 characters</p> 
+                <p>- Site URL must be a valid one</p>
+                <div class="close"> <i class="fa-solid fa-xmark"></i></div>
+            </div>
 
             <table>
                 <thead>
@@ -33,6 +39,18 @@
                     <th>Delete</th>
                 </thead>
                 <tbody id="Table-Body">
+                    <tr>
+                        <td>${i+1}</td>
+                        <td>${Arr[i].Name}</td>
+                        <td><button class="btn1" ><i class="fa-regular fa-eye "></i> Visit</button></td>
+                        <td><button class="btn2" ><i class="fa-solid fa-trash "></i> Delete</button></td>
+                    </tr>   
+                    <tr>
+                        <td>${i+1}</td>
+                        <td>${Arr[i].Name}</td>
+                        <td><button class="btn1" ><i class="fa-regular fa-eye "></i> Visit</button></td>
+                        <td><button class="btn2" ><i class="fa-solid fa-trash "></i> Delete</button></td>
+                    </tr>   
                 </tbody>
             </table>
         </div>
