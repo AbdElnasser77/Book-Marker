@@ -22,7 +22,6 @@ main{
     color: #EDEDED;
 }
 
-
 .container{
     width: 90%;
     margin-left: auto;
@@ -160,13 +159,14 @@ table i{
     border: 1px solid var(--text-color);
     cursor: pointer;
 }
-
 .btn2{
     background-color: red;
     transition: all 0.3s ease;
     border: 1px solid transparent;
 }
-
+.validation-container{
+    display: none;
+}
 .validation-div{
     background: var(--main-color);
     padding: 50px;
@@ -177,7 +177,16 @@ table i{
     width: fit-content;
     border: 2px solid var(--text-color);
     border-radius: 15px;
-    display: none;
+    z-index: 1;
+}
+.overlay{
+    position: fixed;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb( 0, 0, 0, 0.4);
 }
 
  .validation-div p:first-child {
@@ -203,16 +212,6 @@ table i{
     color: var(--red);
     cursor: pointer;
 }
-
-/* .valid{
-    border: green 2px solid;
-    border-radius: 5px;
-}
-
-.valid:focus{
-    border: green 2px solid;
-    outline: rgba(0, 128, 0, 0.5) 1px solid;
-} */
 
 .valid {
     border-color: #198754;

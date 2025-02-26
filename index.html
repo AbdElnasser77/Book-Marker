@@ -1,7 +1,9 @@
 <html>
 <head>
     <title>BookMarker</title>
+    <!-- CSS File Link-->
     <link rel="stylesheet" href="css/style.css">
+    <!-- Fontawesome Link -->
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -24,11 +26,14 @@
                 <button type="submit" onclick="AddSite()" class="submit-button"> SUBMIT </button>
             </div>
 
-            <div class="validation-div ">
-                <p>Site Name or Url is not valid, Please follow the rules below :</p>
-                <p>- Site name must contain at least 3 characters</p> 
-                <p>- Site URL must be a valid one</p>
-                <div class="close"> <i class="fa-solid fa-xmark"></i></div>
+            <div class="validation-container">
+                <div class="overlay"></div>
+                <div class="validation-div">
+                    <p>Site Name or Url is not valid, Please follow the rules below :</p>
+                    <p>- Site name must contain at least 3 characters</p> 
+                    <p>- Site URL must be a valid one</p>
+                    <div class="close"> <i class="fa-solid fa-xmark"></i></div>
+                </div>
             </div>
 
             <table>
@@ -39,18 +44,6 @@
                     <th>Delete</th>
                 </thead>
                 <tbody id="Table-Body">
-                    <tr>
-                        <td>${i+1}</td>
-                        <td>${Arr[i].Name}</td>
-                        <td><button class="btn1" ><i class="fa-regular fa-eye "></i> Visit</button></td>
-                        <td><button class="btn2" ><i class="fa-solid fa-trash "></i> Delete</button></td>
-                    </tr>   
-                    <tr>
-                        <td>${i+1}</td>
-                        <td>${Arr[i].Name}</td>
-                        <td><button class="btn1" ><i class="fa-regular fa-eye "></i> Visit</button></td>
-                        <td><button class="btn2" ><i class="fa-solid fa-trash "></i> Delete</button></td>
-                    </tr>   
                 </tbody>
             </table>
         </div>

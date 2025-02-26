@@ -21,3 +21,4 @@ HTML,CSS,JS
 - Better Designing Skills
 - Use of Regex 
 - Use of Eventhandling and implementing close modal
+- handling link opening with window.open()

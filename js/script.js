@@ -1,7 +1,8 @@
 var nameInput = document.getElementById('name');
 var urlInput = document.getElementById('URL');
 var closeButton = document.querySelector('.validation-div .close');
-var validationModal = document.querySelector('.validation-div');
+var validationModal = document.querySelector('.validation-container');
+
 
 var Websites = [];
 
@@ -62,7 +63,12 @@ function DeleteSite(index){
 }
 
 function VisitSite(URL){
-    window.open(URL , "_blank");
+    var protocol = "https://";
+    if(URL.includes(protocol))
+        window.open(URL , "_blank");
+    else
+        window.open(protocol + URL , "_blank");
+
 }
 
 function Validation(name , url){
@@ -70,7 +76,6 @@ function Validation(name , url){
     var urlRegex = /^(https\:\/\/){0,1}(www.){0,1}[a-zA-Z0-9]+((\.com)|(\.co)){1}$/;
     if(nameRegex.test(name)&&urlRegex.test(url)) return true;
     else return false;
-
 }
 
     var nameRegex = /^[a-zA-Z0-9]{3}/;
@@ -98,3 +103,6 @@ function Validation(name , url){
 closeButton.addEventListener('click', function(){
      validationModal.style.display = "none";
 });
+document.querySelector('.validation-container .overlay').addEventListener('click',function (){
+    validationModal.style.display = "none";
+})
